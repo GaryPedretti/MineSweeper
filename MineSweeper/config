@@ -1,0 +1,2 @@
+[remote "MineSweeper"]
+	puttykeyfile = git@github.com:donmc/MineSweeper.git
