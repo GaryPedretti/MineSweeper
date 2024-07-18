@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MineSweeperBoard.cs" />
     <Compile Include="MineSweeperGame.cs" />
     <Compile Include="MineSweeperForm.cs">
       <SubType>Form</SubType>

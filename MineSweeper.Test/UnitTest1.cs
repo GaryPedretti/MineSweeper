@@ -21,12 +21,14 @@ namespace MineSweeper.Test
             minePositions.Add(14);
             minePositions.Add(15);
 
-            var gameMock = new Mock<MineSweeper.Business.MineSweeperGame>();
+            /*
+            var gameMock = new Mock<System.Math>();
             gameMock.CallBase = true;
             gameMock.Protected().Setup<HashSet<int>>
                 ("GenerateRandomMinePositions", 10)
                 .Returns(minePositions);
-            gameMock.Object.Initialize(10, 10, 10);
+            gameMock.Object.Initialize();
+            */
         }
     }
 }

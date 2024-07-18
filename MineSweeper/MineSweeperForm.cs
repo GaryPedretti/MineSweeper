@@ -33,12 +33,8 @@ namespace MineSweeper.UI
         private void InitMineField()
         {
 
-            int cols = 10;
-            int rows = 10;
-            int mines = 10;
-
             game = MineSweeperGame.Instance;
-            game.Initialize(cols, rows, mines);
+            game.Initialize();
             Console.WriteLine(game);
             
             mineFieldGrid.Controls.Clear();
