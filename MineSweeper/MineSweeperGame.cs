@@ -18,7 +18,7 @@ namespace MineSweeper.Business
         private bool isWon;
         private bool gameOver;
 
-        private static MineSweeperGame instance = new MineSweeperGame();
+        private readonly static MineSweeperGame instance = new MineSweeperGame();
 
         private MineSweeperGame() {}
 
@@ -34,46 +34,36 @@ namespace MineSweeper.Business
             this.mines = mines;
             this.uncoverCount = 0;
 
-            CreateInitialNumberSquares();
+            squares = new Dictionary<int, Square>();
+            for (int i = 0; i < NumberOfSquares; i++)
+            {
+                Square square = new Square(false);
+                Squares.Add(i, square);
+            }
 
-            CreateMineSquares(mines);
+            HashSet<int> minePositions = GenerateRandomMinePositions(mines);
 
-            GetToKnowNeighbors();
-        }
+            foreach (int minePosition in minePositions)
+            {
+                Squares[minePosition] = new Square(true);
+                List<Square> neighbors = FindNeighbors(minePosition);
 
-        private void GetToKnowNeighbors()
-        {
+                foreach (Square square in neighbors)
+                {
+                    if (!square.IsMine)
+                    {
+                        square.IncrementValue();
+                    }
+                }
+            }
+
             for (int i = 0; i < NumberOfSquares; i++)
             {
                 Squares[i].Neighbors = FindNeighbors(i);
             }
         }
 
-        private void CreateMineSquares(int mines)
-        {
-            HashSet<int> minePositions = GenerateRandomMinePositions(mines);
-
-            foreach (int minePosition in minePositions)
-            {
-                Squares[minePosition] = new Square(true);
-                IncrementNeighboringSquares(minePosition);
-            }
-        }
-
-        private void IncrementNeighboringSquares(int minePosition)
-        {
-            List<Square> neighbors = FindNeighbors(minePosition);
-
-            foreach (Square square in neighbors)
-            {
-                if (!square.IsMine)
-                {
-                    square.IncrementValue();
-                }
-            }
-        }
-
-        private HashSet<int> GenerateRandomMinePositions(int mines)
+        public virtual HashSet<int> GenerateRandomMinePositions(int mines)
         {
             HashSet<int> minePositions = new HashSet<int>();
             Random random = new Random();
@@ -84,16 +74,6 @@ namespace MineSweeper.Business
 
             } while (minePositions.Count < mines);
             return minePositions;
-        }
-
-        private void CreateInitialNumberSquares()
-        {
-            squares = new Dictionary<int, Square>();
-            for (int i = 0; i < NumberOfSquares; i++)
-            {
-                Square square = new Square(false);
-                Squares.Add(i, square);
-            }
         }
 
         private List<Square> FindNeighbors(int i)

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MineSweeper", "MineSweeper\MineSweeper.csproj", "{BB23EBDC-098F-43E2-85F5-89EA8DED8E49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MineSweeper.Test", "MineSweeper.Test\MineSweeper.Test.csproj", "{CDC39E8F-2DBF-48A3-B5F5-E51ED7EC8327}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,9 +27,24 @@ Global
 		{BB23EBDC-098F-43E2-85F5-89EA8DED8E49}.Release|Mixed Platforms.Build.0 = Release|x86
 		{BB23EBDC-098F-43E2-85F5-89EA8DED8E49}.Release|x86.ActiveCfg = Release|x86
 		{BB23EBDC-098F-43E2-85F5-89EA8DED8E49}.Release|x86.Build.0 = Release|x86
+		{CDC39E8F-2DBF-48A3-B5F5-E51ED7EC8327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC39E8F-2DBF-48A3-B5F5-E51ED7EC8327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC39E8F-2DBF-48A3-B5F5-E51ED7EC8327}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CDC39E8F-2DBF-48A3-B5F5-E51ED7EC8327}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CDC39E8F-2DBF-48A3-B5F5-E51ED7EC8327}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CDC39E8F-2DBF-48A3-B5F5-E51ED7EC8327}.Debug|x86.Build.0 = Debug|Any CPU
+		{CDC39E8F-2DBF-48A3-B5F5-E51ED7EC8327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC39E8F-2DBF-48A3-B5F5-E51ED7EC8327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC39E8F-2DBF-48A3-B5F5-E51ED7EC8327}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CDC39E8F-2DBF-48A3-B5F5-E51ED7EC8327}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CDC39E8F-2DBF-48A3-B5F5-E51ED7EC8327}.Release|x86.ActiveCfg = Release|Any CPU
+		{CDC39E8F-2DBF-48A3-B5F5-E51ED7EC8327}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {401A02B4-6C8F-47AB-A57A-8D39C97C1442}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = MineSweeper.vsmdi
