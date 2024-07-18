@@ -24,7 +24,12 @@ namespace MineSweeper.Business
 
         public void Initialize()
         {
-            _board = new MineSweeperBoard(); 
+            Initialize(new MineSweeperBoard());
+        }
+
+        public void Initialize(MineSweeperBoard board)
+        {
+            _board = board;
         }
 
         public Dictionary<int, Square> Squares

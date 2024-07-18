@@ -117,7 +117,7 @@ namespace MineSweeper.Business
         }
 
 
-        public virtual HashSet<int> GenerateRandomMinePositions(int mines)
+        public virtual HashSet<int> GenerateRandomMinePositions(int numberOfMines)
         {
             HashSet<int> minePositions = new HashSet<int>();
             Random random = new Random();
@@ -126,7 +126,7 @@ namespace MineSweeper.Business
                 int randomPosition = random.Next(NumberOfSquares);
                 minePositions.Add(randomPosition);
 
-            } while (minePositions.Count < mines);
+            } while (minePositions.Count < numberOfMines);
             return minePositions;
         }
 
