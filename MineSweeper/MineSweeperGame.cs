@@ -9,11 +9,7 @@ namespace MineSweeper.Business
     public class MineSweeperGame
     {
         
-        //private int _rows = 10;
-        //private int _cols = 10;
-        //private int _mines = 10;
         MineSweeperBoard _board;
-        private int _uncoverCount;
         private bool _isWon;
         private bool _gameOver;
 
@@ -28,7 +24,6 @@ namespace MineSweeper.Business
 
         public void Initialize()
         {
-            _uncoverCount = 0;
             _board = new MineSweeperBoard(); 
         }
 
